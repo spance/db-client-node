@@ -1,0 +1,31 @@
+version: 0.1.45
+type: plugin
+author: spance
+name: db_client_node
+label:
+  en_US: Database Client
+  zh_Hans: 数据库操作客户端
+description:
+  en_US: Provide workflow nodes with the ability to read and write databases.
+  zh_Hans: 在工作流中提供读写数据库能力的节点。
+icon: icon.svg
+tags:
+  - utilities
+resource:
+  memory: 268435456
+  permission: {}
+plugins:
+  tools:
+    - provider/dbcn_provider.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+created_at: 2025-03-13T10:01:16.1664153+08:00
+privacy: PRIVACY.md
+verified: false
