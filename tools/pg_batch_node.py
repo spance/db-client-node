@@ -9,7 +9,7 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 from psycopg2.extras import execute_batch
 from sqlglot import exp, parse_one
 
-from provider import db_tool_provider
+from provider import dbcn_provider
 from tools.api import SQLType, typeOf
 
 logger = logging.getLogger(__name__)
@@ -26,7 +26,7 @@ class PGBatchNode(Tool):
         super().__init__(runtime, session)
         try:
             credentials = self.runtime.credentials or runtime.credentials
-            self.db_config, _ = db_tool_provider.get_config(credentials)
+            self.db_config, _ = dbcn_provider.get_config(credentials)
         except Exception as e:
             logger.error(f"Failed to initialize database conn: {str(e)}")
 

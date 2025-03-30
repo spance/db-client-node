@@ -8,7 +8,7 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 from jinja2 import Template
 from sqlglot import exp, parse_one
 
-from provider import db_tool_provider
+from provider import dbcn_provider
 from tools.api import SQLType, typeOf
 
 logger = logging.getLogger(__name__)
@@ -21,7 +21,7 @@ class PGNode(Tool):
         super().__init__(runtime, session)
         try:
             credentials = self.runtime.credentials or runtime.credentials
-            self.db_config, config = db_tool_provider.get_config(credentials)
+            self.db_config, config = dbcn_provider.get_config(credentials)
             self.max_fetched_rows = config["max_fetched_rows"]
             if not self.max_fetched_rows:
                 self.max_fetched_rows = 100

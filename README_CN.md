@@ -49,7 +49,7 @@
 3. **动态 SQL 执行**
    | 字段       | 填写                              |
    |------------|-----------------------------------|
-   | SQL        | `SELECT * FROM messages ` <br/> `WHERE name=$arg0` <br/> ` {% if arg1 %} AND user=$arg1 {% endif %}` |
+   | SQL        | `SELECT * FROM messages ` <br/> `WHERE name=$arg0` <br/> `{% if arg1 %} AND user=$arg1 {% endif %}` |
    | 参数 0     | 对应 `$arg0`：输入字面值或使用 `/` 选择节点变量 |
    | 参数 1     | 对应 `$arg1`：输入字面值或使用 `/` 选择节点变量 |
 
