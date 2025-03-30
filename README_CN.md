@@ -8,6 +8,7 @@
 
 `DB-Client-Node` 是为 Dify 工作流设计的插件工具，提供数据库操作节点。目前支持 `PostgreSQL` 数据库。
 
+![DB-Client-Node demo](https://f001.backblazeb2.com/file/static/dbcn-demo.png)
 
 ## 特性
 - 通过 Dify 的 `credentials_for_provider` 机制安全管理数据库连接信息。
@@ -18,7 +19,7 @@
 
 ## 安装
 要在 Dify 工作流中使用 `DB-Client-Node`：
-1. 通过 Dify 插件市场安装插件，或从 [发布页面](#) 手动下载版本 `0.1.44`。
+1. 通过 Dify 插件市场安装插件，或从 [发布页面](releases) 手动下载版本。
 2. 在 Dify 的 `插件 -> 授权` 设置中配置 PostgreSQL 凭据。
 
 
