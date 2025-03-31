@@ -19,7 +19,7 @@
 
 ## 安装
 要在 Dify 工作流中使用 `DB-Client-Node`：
-1. 通过 Dify 插件市场安装插件，或从 [发布页面](releases) 手动下载版本。
+1. 通过 Dify 插件市场安装插件，或从 [发布页面](https://github.com/spance/db-client-node/releases) 手动下载版本。
 2. 在 Dify 的 `插件 -> 授权` 设置中配置 PostgreSQL 凭据。
 
 

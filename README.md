@@ -6,9 +6,9 @@
 
 [简体中文](./README_CN.md) | **English**
 
-`DB-Client-Node` is a plugin tool designed for Dify workflows, providing database operation nodes. It currently supports `PostgreSQL` databases.
+`DB-Client-Node` is a plugin tool designed for Dify workflows, providing database operation nodes. It currently supports PostgreSQL databases.
 
-![DB-Client-Node demo](https://f001.backblazeb2.com/file/static/dbcn-demo.png)
+![DB-Client-Node demo](https://f001.backblazeb2.com/file/static/dbcn-demo_en.png)
 
 ## Features
 - Securely manages database connection information through Dify’s `credentials_for_provider` mechanism.
@@ -18,8 +18,10 @@
 
 ## Installation
 To use `DB-Client-Node` in a Dify workflow:
-1. Install the plugin via the Dify plugin marketplace or manually download version from the [release page](/releases).
+1. Install the plugin via the Dify plugin marketplace or manually download version from the [release page](https://github.com/spance/db-client-node/releases).
 2. Configure PostgreSQL credentials in Dify’s `Plugins -> Authorization` settings.
+
+![DB-Client-Node credential demo](https://f001.backblazeb2.com/file/static/dbcn-auth-demo.png)
 
 ## Nodes Overview
 
