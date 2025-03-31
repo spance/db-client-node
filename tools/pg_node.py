@@ -53,7 +53,12 @@ class PGNode(Tool):
             tpl: Template = Template(query)
             query = tpl.render(parameters)  # Ex.
 
-        ast = parse_one(query, dialect="postgres")  # Ex.
+        try:
+            ast = parse_one(query, dialect="postgres")  # Ex.
+        except BaseException as ex:
+            # maybe ex is pyo3_runtime.PanicException
+            raise ValueError(f"SQL syntax error, query={query}. caused by={ex}")
+
         # logger.warning(f"SQL exp={ast} type={type(ast)}")
         for p in ast.find_all(exp.Placeholder):
             raise ValueError("Not allowed Placeholder -> `?`, Should use `$arg0~N`")
