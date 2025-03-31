@@ -1,12 +1,13 @@
 # DB-Client-Node
 
-**Author:** spance  
-**Version:** 0.1.45  
-**Type:** Tool  
+<p>
+<a href="https://github.com/spance/db-client-node"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/spance/db-client-node?style=social"/></a>
+<a href="https://marketplace.dify.ai/plugins/spance/db_client_node"><img alt="Dify Marketplace" src="https://img.shields.io/badge/Dify%20Marketplace-DB_Client_Node-blue"/></a>
+</p>
 
-[简体中文](./README_CN.md) | **English**
+[简体中文](./README_CN.md) | **English**  
 
-`DB-Client-Node` is a plugin tool designed for Dify workflows, providing database operation nodes. It currently supports PostgreSQL databases.
+[DB-Client-Node](https://github.com/spance/db-client-node) is a plugin tool designed for Dify workflows, providing database operation nodes. It currently supports PostgreSQL databases.
 
 ![DB-Client-Node demo](https://f001.backblazeb2.com/file/static/dbcn-demo_en.png)
 
@@ -18,7 +19,7 @@
 
 ## Installation
 To use `DB-Client-Node` in a Dify workflow:
-1. Install the plugin via the Dify plugin marketplace or manually download version from the [release page](https://github.com/spance/db-client-node/releases).
+1. Install the plugin via the Dify plugin [marketplace](https://marketplace.dify.ai/plugins/spance/db_client_node) or manually download version from the [release page](https://github.com/spance/db-client-node/releases).
 2. Configure PostgreSQL credentials in Dify’s `Plugins -> Authorization` settings.
 
 ![DB-Client-Node credential demo](https://f001.backblazeb2.com/file/static/dbcn-auth-demo.png)

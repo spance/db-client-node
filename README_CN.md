@@ -1,12 +1,13 @@
 # DB-Client-Node
 
-**Author:** spance  
-**Version:** 0.1.45  
-**Type:** tool  
+<p>
+<a href="https://github.com/spance/db-client-node"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/spance/db-client-node?style=social"/></a>
+<a href="https://marketplace.dify.ai/plugins/spance/db_client_node"><img alt="Dify Marketplace" src="https://img.shields.io/badge/Dify%20Marketplace-DB_Client_Node-blue"/></a>
+</p>
 
-**简体中文** | [English](./README.md)
+**简体中文** | [English](./README.md) 
 
-`DB-Client-Node` 是为 Dify 工作流设计的插件工具，提供数据库操作节点。目前支持 `PostgreSQL` 数据库。
+[DB-Client-Node](https://github.com/spance/db-client-node) 是为 Dify 工作流设计的插件工具，提供数据库操作节点。目前支持 PostgreSQL 数据库。
 
 ![DB-Client-Node demo](https://f001.backblazeb2.com/file/static/dbcn-demo.png)
 
@@ -19,7 +20,7 @@
 
 ## 安装
 要在 Dify 工作流中使用 `DB-Client-Node`：
-1. 通过 Dify 插件市场安装插件，或从 [发布页面](https://github.com/spance/db-client-node/releases) 手动下载版本。
+1. 通过 Dify [插件市场](https://marketplace.dify.ai/plugins/spance/db_client_node) 安装插件，或从 [发布页面](https://github.com/spance/db-client-node/releases) 手动下载版本。
 2. 在 Dify 的 `插件 -> 授权` 设置中配置 PostgreSQL 凭据。
 
 
