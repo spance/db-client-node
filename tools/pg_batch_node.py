@@ -35,9 +35,12 @@ class PGBatchNode(Tool):
         logger.warning(f"Initialized database conn: {db_conn}")
         return db_conn
 
-    def _check_sql_type(self, sql) -> Tuple[SQLType, str]:
-        ast = parse_one(sql, dialect="postgres")
-        # logger.warning(f"SQL exp={ast} type={type(ast)}")
+    def _check_sql_type(self, query) -> Tuple[SQLType, str]:
+        try:
+            ast = parse_one(query, dialect="postgres")
+        except BaseException as ex:
+            # maybe ex is pyo3_runtime.PanicException
+            raise ValueError(f"SQL syntax error, query={query}. caused by={ex}")
 
         # 允许Placeholder 转为%s
         for i in ast.find_all(exp.Placeholder):
