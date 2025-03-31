@@ -75,8 +75,12 @@ output_schema:
   properties:
     data:
       type: array
+      items: 
+        type: object
     columns:
       type: array
+      items: 
+        type: string
     affected_rows:
       type: number
 extra:
