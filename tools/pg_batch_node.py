@@ -106,8 +106,9 @@ class PGBatchNode(Tool):
             yield self.create_json_message({"affected_rows": affected_rows})
 
         except Exception as ex:
-            logger.error(f"SQL={sql_exp}, args={args}, {ex}")
-            raise RuntimeError(ex)
+            logger.error(f"SQL={sql_exp}, args={args}, {type(ex)}: {ex}")
+            raise RuntimeError(f"{type(ex)}: {ex}") from ex
+        
         finally:
             if cursor:
                 cursor.close()

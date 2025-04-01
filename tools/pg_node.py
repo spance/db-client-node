@@ -92,6 +92,8 @@ class PGNode(Tool):
                     logger.warning(f"SQL-select exp={sql_exp}, count={len(results)}")
                     yield self.create_variable_message("data", results)
                     yield self.create_variable_message("columns", columns)
+                    data = [dict(zip(columns, row)) for row in results]
+                    yield self.create_json_message({"data": data})
 
                 case SQLType.INSERT | SQLType.UPDATE | SQLType.DELETE:
                     cursor.execute(sql_exp, parameters)
@@ -102,12 +104,13 @@ class PGNode(Tool):
                         f"SQL-update exp={sql_exp}, affected_rows={affected_rows}"
                     )
                     yield self.create_variable_message("affected_rows", affected_rows)
+                    yield self.create_json_message({"affected_rows": affected_rows})
 
                 case _:
                     raise ValueError("Invalid operation type")
         except Exception as ex:
-            logger.exception(f"SQL={sql_exp} casued by={ex}")
-            raise RuntimeError(f"SQL={sql_exp}") from ex
+            logger.exception(f"SQL={sql_exp}, casued by={type(ex)}: {ex}")
+            raise RuntimeError(f"{type(ex)}: {ex}") from ex
 
         finally:
             if cursor:
