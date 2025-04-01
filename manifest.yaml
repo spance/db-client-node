@@ -1,4 +1,4 @@
-version: 0.1.45
+version: 0.1.47
 type: plugin
 author: spance
 name: db_client_node
