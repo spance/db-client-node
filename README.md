@@ -70,19 +70,31 @@ The batch client node is designed for bulk data insertion, utilizing the databas
 ## Node Output
 
 ### Query Execution
-For `SELECT` statements, the node returns:
-- **`data`**: The query result data, organized by rows.
-- **`columns`**: The column names of the result set.
+For `SELECT` statements, the node provides the following return values:
+- **`data`**: The query result data, represented as a list of rows where each row is an array of column values.
+- **`columns`**: A list of column names corresponding to the result set.
+- **`json[0].data`**: An alternative representation of the query result data in the default `json` return format of the plugin tool, structured as an object with column names as keys.
 
 **Example Output:**
 ```json
 {
     "data": [
-        ["row0_column0", "column1", "column2"],
-        ["row1_column0", "column1", "column2"],
-        ["row2_column0", "column1", "column2"]
+        ["row0_value0", "row0_value1", "row0_value2"],
+        ["row1_value0", "row1_value1", "row1_value2"],
+        ["row2_value0", "row2_value1", "row2_value2"]
     ],
-    "columns": ["name", "user", "content"]
+    "columns": ["column0", "column1", "column2"],
+    "json": [
+        {
+            "data": [
+                {
+                    "column0": "value0",
+                    "column1": "value1",
+                    "column2": "value2"
+                }
+            ]
+        }
+    ]
 }
 ```
 

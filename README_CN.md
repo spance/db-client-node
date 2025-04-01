@@ -72,18 +72,30 @@
 
 ### 查询执行
 对于 `SELECT` 语句，节点返回：
-- **`data`**: 查询结果数据，按行排列。
+- **`data`**: 查询结果数据的列表，第一维按行排列，第二维按列排列。
 - **`columns`**: 结果集的列名。
+- **`json[0].data`**: 默认的json返回值获取查询结果，元素是以列名为键的字典对象。
 
 **示例输出：**
 ```json
 {
     "data": [
-        ["row0_column0", "column1", "column2"],
-        ["row1_column0", "column1", "column2"],
-        ["row2_column0", "column1", "column2"]
+        ["row0_value0", "row0_value1", "row0_value2"],
+        ["row1_value0", "row1_value1", "row1_value2"],
+        ["row2_value0", "row2_value1", "row2_value2"]
     ],
-    "columns": ["name", "user", "content"]
+    "columns": ["column0", "column1", "column2"],
+    "json": [
+        {
+            "data": [
+                {
+                    "column0": "value0",
+                    "column1": "value1",
+                    "column2": "value2"
+                }
+            ]
+        }
+    ]
 }
 ```
 
