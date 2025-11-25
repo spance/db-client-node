@@ -68,7 +68,7 @@ class PGNode(Tool):
             else:
                 namedParam = f"%({p.name})s "
             p.replace(namedParam)
-        return typeOf(ast), ast.sql()  # Ex.
+        return typeOf(ast), ast.sql(dialect="postgres")  # Ex.
 
     def _invoke(
         self, parameters: Dict[str, Any]
