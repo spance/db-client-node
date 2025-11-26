@@ -53,7 +53,7 @@ class PGBatchNode(Tool):
             else:  # 保留 $argXYZ
                 namedParam = f"%({p.name})s "
             p.replace(namedParam)
-        return typeOf(ast), ast.sql()
+        return typeOf(ast), ast.sql(dialect="postgres")
 
     def _check_query(self, query):
         if query:
